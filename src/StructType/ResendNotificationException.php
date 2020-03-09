@@ -1,0 +1,105 @@
+<?php
+
+namespace Nmusco\AssureSign\v2\StructType;
+
+use \WsdlToPhp\PackageBase\AbstractStructBase;
+
+/**
+ * This class stands for ResendNotificationException StructType
+ * @subpackage Structs
+ */
+class ResendNotificationException extends AbstractStructBase
+{
+    /**
+     * The Severity
+     * Meta information extracted from the WSDL
+     * - use: required
+     * @var string
+     */
+    public $Severity;
+    /**
+     * The _
+     * @var string
+     */
+    public $_;
+    /**
+     * Constructor method for ResendNotificationException
+     * @uses ResendNotificationException::setSeverity()
+     * @uses ResendNotificationException::set_()
+     * @param string $severity
+     * @param string $_
+     */
+    public function __construct($severity = null, $_ = null)
+    {
+        $this
+            ->setSeverity($severity)
+            ->set_($_);
+    }
+    /**
+     * Get Severity value
+     * @return string
+     */
+    public function getSeverity()
+    {
+        return $this->Severity;
+    }
+    /**
+     * Set Severity value
+     * @uses \Nmusco\AssureSign\v2\EnumType\ResendNotificationExceptionSeverity::valueIsValid()
+     * @uses \Nmusco\AssureSign\v2\EnumType\ResendNotificationExceptionSeverity::getValidValues()
+     * @throws \InvalidArgumentException
+     * @param string $severity
+     * @return \Nmusco\AssureSign\v2\StructType\ResendNotificationException
+     */
+    public function setSeverity($severity = null)
+    {
+        // validation for constraint: enumeration
+        if (!\Nmusco\AssureSign\v2\EnumType\ResendNotificationExceptionSeverity::valueIsValid($severity)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Nmusco\AssureSign\v2\EnumType\ResendNotificationExceptionSeverity', is_array($severity) ? implode(', ', $severity) : var_export($severity, true), implode(', ', \Nmusco\AssureSign\v2\EnumType\ResendNotificationExceptionSeverity::getValidValues())), __LINE__);
+        }
+        $this->Severity = $severity;
+        return $this;
+    }
+    /**
+     * Get _ value
+     * @return string|null
+     */
+    public function get_()
+    {
+        return $this->_;
+    }
+    /**
+     * Set _ value
+     * @param string $_
+     * @return \Nmusco\AssureSign\v2\StructType\ResendNotificationException
+     */
+    public function set_($_ = null)
+    {
+        // validation for constraint: string
+        if (!is_null($_) && !is_string($_)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
+        }
+        $this->_ = $_;
+        return $this;
+    }
+    /**
+     * Method called when an object has been exported with var_export() functions
+     * It allows to return an object instantiated with the values
+     * @see AbstractStructBase::__set_state()
+     * @uses AbstractStructBase::__set_state()
+     * @param array $array the exported values
+     * @return \Nmusco\AssureSign\v2\StructType\ResendNotificationException
+     */
+    public static function __set_state(array $array)
+    {
+        return parent::__set_state($array);
+    }
+    /**
+     * Method returning the class name
+     * @return string __CLASS__
+     */
+    public function __toString()
+    {
+        return __CLASS__;
+    }
+}
