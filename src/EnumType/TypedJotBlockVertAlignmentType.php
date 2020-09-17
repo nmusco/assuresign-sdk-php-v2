@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for TypedJotBlockVertAlignmentType EnumType
  * @subpackage Enumerations
  */
-class TypedJotBlockVertAlignmentType
+class TypedJotBlockVertAlignmentType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'NotSpecified'
@@ -29,16 +31,6 @@ class TypedJotBlockVertAlignmentType
      */
     const VALUE_BOTTOM = 'Bottom';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NOT_SPECIFIED
      * @uses self::VALUE_TOP
@@ -54,13 +46,5 @@ class TypedJotBlockVertAlignmentType
             self::VALUE_CENTER,
             self::VALUE_BOTTOM,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

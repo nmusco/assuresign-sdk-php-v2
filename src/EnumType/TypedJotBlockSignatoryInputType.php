@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for TypedJotBlockSignatoryInputType EnumType
  * @subpackage Enumerations
  */
-class TypedJotBlockSignatoryInputType
+class TypedJotBlockSignatoryInputType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Auto'
@@ -54,16 +56,6 @@ class TypedJotBlockSignatoryInputType
      */
     const VALUE_MULTIPLE_CHOICE_CHECKBOX = 'MultipleChoiceCheckbox';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_AUTO
      * @uses self::VALUE_FREE_TEXT
@@ -89,13 +81,5 @@ class TypedJotBlockSignatoryInputType
             self::VALUE_MULTIPLE_CHOICE_RADIO,
             self::VALUE_MULTIPLE_CHOICE_CHECKBOX,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

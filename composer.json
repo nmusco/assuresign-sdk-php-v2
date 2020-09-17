@@ -1,6 +1,6 @@
 {
     "name": "nmusco/assuresign-sdk-php-v2",
-    "description": "Package generated from https://sb.assuresign.net/Services/DocumentNOW/v2/documentnow.svc?wsdl using wsdltophp/packagegenerator",
+    "description": "Package generated from https://www.assuresign.net/Services/DocumentNOW/v2/documentnow.svc?wsdl using wsdltophp/packagegenerator",
     "require": {
         "php": ">=5.3.3",
         "ext-soap": "*",

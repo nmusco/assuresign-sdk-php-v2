@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for FieldVerticalAlignmentType EnumType
  * @subpackage Enumerations
  */
-class FieldVerticalAlignmentType
+class FieldVerticalAlignmentType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Top'
@@ -24,16 +26,6 @@ class FieldVerticalAlignmentType
      */
     const VALUE_BOTTOM = 'Bottom';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_TOP
      * @uses self::VALUE_CENTER
@@ -47,13 +39,5 @@ class FieldVerticalAlignmentType
             self::VALUE_CENTER,
             self::VALUE_BOTTOM,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

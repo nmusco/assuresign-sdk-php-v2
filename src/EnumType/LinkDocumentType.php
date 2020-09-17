@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for LinkDocumentType EnumType
  * @subpackage Enumerations
  */
-class LinkDocumentType
+class LinkDocumentType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Original'
@@ -24,16 +26,6 @@ class LinkDocumentType
      */
     const VALUE_COMPLETED = 'Completed';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_ORIGINAL
      * @uses self::VALUE_INTERIM
@@ -47,13 +39,5 @@ class LinkDocumentType
             self::VALUE_INTERIM,
             self::VALUE_COMPLETED,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

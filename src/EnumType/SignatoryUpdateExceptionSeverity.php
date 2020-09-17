@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for SignatoryUpdateExceptionSeverity EnumType
  * @subpackage Enumerations
  */
-class SignatoryUpdateExceptionSeverity
+class SignatoryUpdateExceptionSeverity extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Warning'
@@ -24,16 +26,6 @@ class SignatoryUpdateExceptionSeverity
      */
     const VALUE_FATAL = 'Fatal';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_WARNING
      * @uses self::VALUE_ERROR
@@ -47,13 +39,5 @@ class SignatoryUpdateExceptionSeverity
             self::VALUE_ERROR,
             self::VALUE_FATAL,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for SignatureType EnumType
  * @subpackage Enumerations
  */
-class SignatureType
+class SignatureType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Signature'
@@ -19,16 +21,6 @@ class SignatureType
      */
     const VALUE_INITIALS = 'Initials';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_SIGNATURE
      * @uses self::VALUE_INITIALS
@@ -40,13 +32,5 @@ class SignatureType
             self::VALUE_SIGNATURE,
             self::VALUE_INITIALS,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

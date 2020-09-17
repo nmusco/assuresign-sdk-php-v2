@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for JotBlockBorderType EnumType
  * @subpackage Enumerations
  */
-class JotBlockBorderType
+class JotBlockBorderType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'NotSpecified'
@@ -29,16 +31,6 @@ class JotBlockBorderType
      */
     const VALUE_ALL = 'All';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NOT_SPECIFIED
      * @uses self::VALUE_NONE
@@ -54,13 +46,5 @@ class JotBlockBorderType
             self::VALUE_BOTTOM,
             self::VALUE_ALL,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

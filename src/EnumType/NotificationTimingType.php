@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for NotificationTimingType EnumType
  * @subpackage Enumerations
  */
-class NotificationTimingType
+class NotificationTimingType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'SigningStep_Started'
@@ -124,16 +126,6 @@ class NotificationTimingType
      */
     const VALUE_ENVELOPE_SIGNER_KBA_COMPLETE = 'Envelope_SignerKbaComplete';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_SIGNING_STEP_STARTED
      * @uses self::VALUE_SIGNING_STEP_COMPLETED
@@ -187,13 +179,5 @@ class NotificationTimingType
             self::VALUE_DOCUMENT_SIGNER_KBA_COMPLETE,
             self::VALUE_ENVELOPE_SIGNER_KBA_COMPLETE,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for FieldFixedInputTimingType EnumType
  * @subpackage Enumerations
  */
-class FieldFixedInputTimingType
+class FieldFixedInputTimingType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'OnDocumentStart'
@@ -19,16 +21,6 @@ class FieldFixedInputTimingType
      */
     const VALUE_ON_DOCUMENT_COMPLETE = 'OnDocumentComplete';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_ON_DOCUMENT_START
      * @uses self::VALUE_ON_DOCUMENT_COMPLETE
@@ -40,13 +32,5 @@ class FieldFixedInputTimingType
             self::VALUE_ON_DOCUMENT_START,
             self::VALUE_ON_DOCUMENT_COMPLETE,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

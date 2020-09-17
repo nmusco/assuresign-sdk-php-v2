@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for FieldValidationType EnumType
  * @subpackage Enumerations
  */
-class FieldValidationType
+class FieldValidationType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'NotSpecified'
@@ -74,16 +76,6 @@ class FieldValidationType
      */
     const VALUE_DATE_DDMMYYYY_CURRENT_DATE_PREFILL = 'DateDDMMYYYY_CurrentDatePrefill';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NOT_SPECIFIED
      * @uses self::VALUE_NONE
@@ -117,13 +109,5 @@ class FieldValidationType
             self::VALUE_TEN_DIGIT_PHONE_NUMBER,
             self::VALUE_DATE_DDMMYYYY_CURRENT_DATE_PREFILL,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

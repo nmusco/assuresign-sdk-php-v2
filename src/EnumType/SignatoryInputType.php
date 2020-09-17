@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for SignatoryInputType EnumType
  * @subpackage Enumerations
  */
-class SignatoryInputType
+class SignatoryInputType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'FreeText'
@@ -49,16 +51,6 @@ class SignatoryInputType
      */
     const VALUE_MULTIPLE_CHOICE_CHECKBOX = 'MultipleChoiceCheckbox';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_FREE_TEXT
      * @uses self::VALUE_PREFILL
@@ -82,13 +74,5 @@ class SignatoryInputType
             self::VALUE_MULTIPLE_CHOICE_RADIO,
             self::VALUE_MULTIPLE_CHOICE_CHECKBOX,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

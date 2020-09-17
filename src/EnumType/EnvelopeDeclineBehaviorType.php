@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for EnvelopeDeclineBehaviorType EnumType
  * @subpackage Enumerations
  */
-class EnvelopeDeclineBehaviorType
+class EnvelopeDeclineBehaviorType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'DeclineAll'
@@ -19,16 +21,6 @@ class EnvelopeDeclineBehaviorType
      */
     const VALUE_DECLINE_SINGLE = 'DeclineSingle';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_DECLINE_ALL
      * @uses self::VALUE_DECLINE_SINGLE
@@ -40,13 +32,5 @@ class EnvelopeDeclineBehaviorType
             self::VALUE_DECLINE_ALL,
             self::VALUE_DECLINE_SINGLE,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

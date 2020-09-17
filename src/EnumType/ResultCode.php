@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for ResultCode EnumType
  * @subpackage Enumerations
  */
-class ResultCode
+class ResultCode extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'CAN'
@@ -69,16 +71,6 @@ class ResultCode
      */
     const VALUE_NAS = 'NAS';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_CAN
      * @uses self::VALUE_COI
@@ -110,13 +102,5 @@ class ResultCode
             self::VALUE_NMD,
             self::VALUE_NAS,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

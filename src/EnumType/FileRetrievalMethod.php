@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for FileRetrievalMethod EnumType
  * @subpackage Enumerations
  */
-class FileRetrievalMethod
+class FileRetrievalMethod extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'BasicHttp'
@@ -24,16 +26,6 @@ class FileRetrievalMethod
      */
     const VALUE_SFTP = 'Sftp';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_BASIC_HTTP
      * @uses self::VALUE_SALESFORCE_API
@@ -47,13 +39,5 @@ class FileRetrievalMethod
             self::VALUE_SALESFORCE_API,
             self::VALUE_SFTP,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

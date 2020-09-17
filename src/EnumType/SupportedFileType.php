@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for SupportedFileType EnumType
  * @subpackage Enumerations
  */
-class SupportedFileType
+class SupportedFileType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'PDF'
@@ -54,16 +56,6 @@ class SupportedFileType
      */
     const VALUE_TIF = 'TIF';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_PDF
      * @uses self::VALUE_DOC
@@ -89,13 +81,5 @@ class SupportedFileType
             self::VALUE_TIFF,
             self::VALUE_TIF,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

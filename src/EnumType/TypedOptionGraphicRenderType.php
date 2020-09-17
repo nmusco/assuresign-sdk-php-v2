@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for TypedOptionGraphicRenderType EnumType
  * @subpackage Enumerations
  */
-class TypedOptionGraphicRenderType
+class TypedOptionGraphicRenderType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'None'
@@ -49,16 +51,6 @@ class TypedOptionGraphicRenderType
      */
     const VALUE_TEXT = 'Text';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NONE
      * @uses self::VALUE_EMPTY
@@ -82,13 +74,5 @@ class TypedOptionGraphicRenderType
             self::VALUE_NO_BOX_X,
             self::VALUE_TEXT,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

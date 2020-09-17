@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for WrittenJotBlockInkColor EnumType
  * @subpackage Enumerations
  */
-class WrittenJotBlockInkColor
+class WrittenJotBlockInkColor extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'NotSpecified'
@@ -24,16 +26,6 @@ class WrittenJotBlockInkColor
      */
     const VALUE_BLUE = 'Blue';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NOT_SPECIFIED
      * @uses self::VALUE_BLACK
@@ -47,13 +39,5 @@ class WrittenJotBlockInkColor
             self::VALUE_BLACK,
             self::VALUE_BLUE,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

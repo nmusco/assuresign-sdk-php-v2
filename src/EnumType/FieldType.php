@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for FieldType EnumType
  * @subpackage Enumerations
  */
-class FieldType
+class FieldType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Written'
@@ -19,16 +21,6 @@ class FieldType
      */
     const VALUE_TYPED = 'Typed';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_WRITTEN
      * @uses self::VALUE_TYPED
@@ -40,13 +32,5 @@ class FieldType
             self::VALUE_WRITTEN,
             self::VALUE_TYPED,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for DocumentTransmissionMethod EnumType
  * @subpackage Enumerations
  */
-class DocumentTransmissionMethod
+class DocumentTransmissionMethod extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Ftp'
@@ -29,16 +31,6 @@ class DocumentTransmissionMethod
      */
     const VALUE_WEB = 'Web';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_FTP
      * @uses self::VALUE_FTPS
@@ -54,13 +46,5 @@ class DocumentTransmissionMethod
             self::VALUE_SFTP,
             self::VALUE_WEB,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

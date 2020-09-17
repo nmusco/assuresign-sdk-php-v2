@@ -2,11 +2,13 @@
 
 namespace Nmusco\AssureSign\v2\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for TypedJotBlockFontNameType EnumType
  * @subpackage Enumerations
  */
-class TypedJotBlockFontNameType
+class TypedJotBlockFontNameType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'NotSpecified'
@@ -49,16 +51,6 @@ class TypedJotBlockFontNameType
      */
     const VALUE_OTTO = 'Otto';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NOT_SPECIFIED
      * @uses self::VALUE_COURIER_NEW
@@ -82,13 +74,5 @@ class TypedJotBlockFontNameType
             self::VALUE_MY_HANDWRITING,
             self::VALUE_OTTO,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }
